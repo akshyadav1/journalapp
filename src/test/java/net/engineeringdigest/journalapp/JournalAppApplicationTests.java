@@ -1,13 +1,16 @@
 package net.engineeringdigest.journalapp;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class JournalAppApplicationTests {
 
-	@Test
-	void contextLoads() {
+	@ParameterizedTest
+	@CsvSource({"AKSHAY"})
+	void contextLoads(String a) {
+		assertEquals("AKSHAY", a);
 	}
 
 }
