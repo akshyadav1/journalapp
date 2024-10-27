@@ -19,7 +19,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) {
         User user = userRepository.findByUserName(username);
-        log.info("u - {}", user);
+        log.info("User - {}", username);
         if (user != null) {
             return org.springframework.security.core.userdetails.User.builder()
                     .username(user.getUserName())
